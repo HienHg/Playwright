@@ -8,13 +8,20 @@ variables:
   NODE_VERSION: '18.x'
   PROJECT_PATH: 'HoangThaoHien-Final-Playwright'
 
+
 steps:
+
+- script: node -v
+  displayName: Check Node
+
 # Setup Node.js
 - task: NodeTool@1
   inputs:
     versionSpec: $(NODE_VERSION)
   displayName: Install Node.js
 
+- script: node -v
+  displayName: Check Node
 
 # Cache npm
 - task: Cache@2
@@ -50,11 +57,3 @@ steps:
     testResultsFormat: 'JUnit'
     testResultsFiles: '$(PROJECT_PATH)/test-results/*.xml'
   displayName: Publish test results
-
-# Publish Playwright report
-- task: PublishPipelineArtifact@1
-  condition: succeededOrFailed()
-  inputs:
-    targetPath: '$(PROJECT_PATH)/playwright-report'
-    artifactName: 'playwright-report'
-  displayName: Publish Playwright report
