@@ -1,0 +1,41 @@
+trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  NODE_VERSION: '18.x'
+
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: $(NODE_VERSION)
+
+- task: Cache@2
+  inputs:
+    key: 'npm | "$(Agent.OS)" | package-lock.json'
+    path: ~/.npm
+
+- script: npm ci
+  displayName: Install dependencies
+
+- script: npx playwright install --with-deps
+  displayName: Install Playwright browsers
+
+- script: npx playwright test --reporter=junit
+  displayName: Run tests
+
+- task: PublishTestResults@2
+  condition: succeededOrFailed()
+  inputs:
+    testResultsFiles: '**/test-results/*.xml'
+
+- script: npm run build --if-present
+  displayName: Build project
+
+- task: PublishBuildArtifacts@1
+  condition: succeededOrFailed()
+  inputs:
+    pathToPublish: 'dist'
+    artifactName: 'build-output'
