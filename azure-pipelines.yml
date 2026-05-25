@@ -5,22 +5,10 @@ pool:
   vmImage: 'ubuntu-latest'
 
 variables:
-  NODE_VERSION: '18.x'
-  PROJECT_PATH: 'HoangThaoHien-Final-Playwright'
-
+- name: PROJECT_PATH
+  value: 'HoangThaoHien-Final-Playwright'
 
 steps:
-
-- script: node -v
-  displayName: Check Node
-
-# # Setup Node.js
-# - task: NodeTool@1
-#   inputs:
-#     versionSpec: $(NODE_VERSION)
-#   displayName: Install Node.js
-
-
 # Cache npm
 - task: Cache@2
   inputs:
@@ -35,6 +23,9 @@ steps:
 
 # Install Playwright browsers
 - script: npx playwright install
+  env:
+    USER_NAME: $(USER_NAME)
+    PASSWORD: $(PASSWORD)
   workingDirectory: $(PROJECT_PATH)
   displayName: Install Playwright browsers
 
