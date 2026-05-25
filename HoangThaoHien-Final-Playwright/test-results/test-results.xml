@@ -1,0 +1,11 @@
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="9.720794">
+<testsuite name="ui\profile\profile-test.spec.ts" timestamp="2026-05-22T08:37:45.909Z" hostname="chromium" tests="1" failures="0" skipped="0" time="7.534" errors="0">
+<testcase name="Profile Test › @Profile Verify when user follow a photographer" classname="ui\profile\profile-test.spec.ts" time="7.534">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|ui-profile-profile-test-Pr-7a8bc--user-follow-a-photographer-chromium\test-finished-1.png]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>
