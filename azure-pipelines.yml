@@ -1,0 +1,59 @@
+trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  NODE_VERSION: '18.x'
+  PROJECT_PATH: 'HoangThaoHien-Final-Playwright'
+
+steps:
+# Setup Node.js
+- task: NodeTool@1
+  inputs:
+    versionSpec: $(NODE_VERSION)
+  displayName: Install Node.js
+
+# Cache npm
+- task: Cache@2
+  inputs:
+    key: 'npm | "$(Agent.OS)" | $(PROJECT_PATH)/package-lock.json'
+    path: ~/.npm
+  displayName: Cache npm
+
+# Install dependencies
+- script: npm ci
+  workingDirectory: $(PROJECT_PATH)
+  displayName: Install dependencies
+
+# Install Playwright browsers
+- script: npx playwright install --with-deps
+  workingDirectory: $(PROJECT_PATH)
+  displayName: Install Playwright browsers
+
+# Build (if exists)
+- script: npm run build --if-present
+  workingDirectory: $(PROJECT_PATH)
+  displayName: Build project
+
+# Run tests
+- script: npx playwright test --reporter=junit
+  workingDirectory: $(PROJECT_PATH)
+  displayName: Run Playwright tests
+
+# Publish test results
+- task: PublishTestResults@2
+  condition: succeededOrFailed()
+  inputs:
+    testResultsFormat: 'JUnit'
+    testResultsFiles: '$(PROJECT_PATH)/test-results/*.xml'
+  displayName: Publish test results
+
+# Publish Playwright report
+- task: PublishPipelineArtifact@1
+  condition: succeededOrFailed()
+  inputs:
+    targetPath: '$(PROJECT_PATH)/playwright-report'
+    artifactName: 'playwright-report'
+  displayName: Publish Playwright report
