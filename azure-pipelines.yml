@@ -23,7 +23,7 @@ steps:
   displayName: Cache npm
 
 # Install dependencies
-- script: npm ci
+- script: npm install
   workingDirectory: $(PROJECT_PATH)
   displayName: Install dependencies
 
