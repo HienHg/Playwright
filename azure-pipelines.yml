@@ -10,7 +10,7 @@ variables:
 
 steps:
 # Setup Node.js
-- task: NodeTool@0
+- task: NodeTool@1
   inputs:
     versionSpec: $(NODE_VERSION)
   displayName: Install Node.js
