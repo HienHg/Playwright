@@ -14,14 +14,12 @@ steps:
 - script: node -v
   displayName: Check Node
 
-# Setup Node.js
-- task: NodeTool@1
-  inputs:
-    versionSpec: $(NODE_VERSION)
-  displayName: Install Node.js
+# # Setup Node.js
+# - task: NodeTool@1
+#   inputs:
+#     versionSpec: $(NODE_VERSION)
+#   displayName: Install Node.js
 
-- script: node -v
-  displayName: Check Node
 
 # Cache npm
 - task: Cache@2
