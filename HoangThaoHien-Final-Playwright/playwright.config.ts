@@ -16,7 +16,7 @@ export default defineConfig({
     testIdAttribute: 'data-qa',
     trace: 'on-first-retry',
     baseURL: 'https://unsplash.com/',
-    headless: false,
+    headless: true,
     screenshot: "on",
     browserName: "chromium",
     actionTimeout: 12 * 1000,

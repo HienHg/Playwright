@@ -1,11 +1,299 @@
-<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="9.720794">
-<testsuite name="ui\profile\profile-test.spec.ts" timestamp="2026-05-22T08:37:45.909Z" hostname="chromium" tests="1" failures="0" skipped="0" time="7.534" errors="0">
-<testcase name="Profile Test › @Profile Verify when user follow a photographer" classname="ui\profile\profile-test.spec.ts" time="7.534">
+<testsuites id="" name="" tests="9" failures="0" skipped="0" errors="9" time="48.450526999999994">
+<testsuite name="ui\profile\profile-test.spec.ts" timestamp="2026-05-25T10:42:06.376Z" hostname="chromium" tests="3" failures="0" skipped="0" time="22.818" errors="3">
+<testcase name="Profile Test › @Profile Verify when user follow a photographer" classname="ui\profile\profile-test.spec.ts" time="6.891">
 <system-out>
 <![CDATA[
-[[ATTACHMENT|ui-profile-profile-test-Pr-7a8bc--user-follow-a-photographer-chromium\test-finished-1.png]]
+[[ATTACHMENT|ui-profile-profile-test-Pr-7a8bc--user-follow-a-photographer-chromium\test-failed-1.png]]
+
+[[ATTACHMENT|ui-profile-profile-test-Pr-7a8bc--user-follow-a-photographer-chromium\error-context.md]]
 ]]>
 </system-out>
+<error message="locator.fill: value: expected string, got undefined" type="Error">
+<![CDATA[  [chromium] › ui\profile\profile-test.spec.ts:17:9 › Profile Test › @Profile Verify when user follow a photographer 
+
+    Error: locator.fill: value: expected string, got undefined
+
+       at ..\pages\login\login-page.ts:14
+
+      12 |
+      13 |     async enterEmailAndPassword(email: string, password: string) {
+    > 14 |         await this.txtEmailLoc.fill(email)
+         |                                ^
+      15 |         await this.txtPasswordLoc.fill(password)
+      16 |     }
+      17 |
+        at LoginPage.enterEmailAndPassword (C:\Users\HienHoangThao\Downloads\Assignment\CI-CD\CI-CD\Playwright\HoangThaoHien-Final-Playwright\src\pages\login\login-page.ts:14:32)
+        at Object.loginFixture (C:\Users\HienHoangThao\Downloads\Assignment\CI-CD\CI-CD\Playwright\HoangThaoHien-Final-Playwright\src\core\fixtures\fixture.ts:17:29)
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\..\test-results\ui-profile-profile-test-Pr-7a8bc--user-follow-a-photographer-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\..\test-results\ui-profile-profile-test-Pr-7a8bc--user-follow-a-photographer-chromium\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="Profile Test › @Profile Verify when updating the user information in the Profile page" classname="ui\profile\profile-test.spec.ts" time="8.707">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|ui-profile-profile-test-Pr-52027-rmation-in-the-Profile-page-chromium\test-failed-1.png]]
+
+[[ATTACHMENT|ui-profile-profile-test-Pr-52027-rmation-in-the-Profile-page-chromium\error-context.md]]
+]]>
+</system-out>
+<error message="locator.fill: value: expected string, got undefined" type="Error">
+<![CDATA[  [chromium] › ui\profile\profile-test.spec.ts:31:9 › Profile Test › @Profile Verify when updating the user information in the Profile page 
+
+    Error: locator.fill: value: expected string, got undefined
+
+       at ..\pages\login\login-page.ts:14
+
+      12 |
+      13 |     async enterEmailAndPassword(email: string, password: string) {
+    > 14 |         await this.txtEmailLoc.fill(email)
+         |                                ^
+      15 |         await this.txtPasswordLoc.fill(password)
+      16 |     }
+      17 |
+        at LoginPage.enterEmailAndPassword (C:\Users\HienHoangThao\Downloads\Assignment\CI-CD\CI-CD\Playwright\HoangThaoHien-Final-Playwright\src\pages\login\login-page.ts:14:32)
+        at Object.loginFixture (C:\Users\HienHoangThao\Downloads\Assignment\CI-CD\CI-CD\Playwright\HoangThaoHien-Final-Playwright\src\core\fixtures\fixture.ts:17:29)
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\..\test-results\ui-profile-profile-test-Pr-52027-rmation-in-the-Profile-page-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\..\test-results\ui-profile-profile-test-Pr-52027-rmation-in-the-Profile-page-chromium\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="Profile Test › @Profile Verify list of liked photos when user likes photos" classname="ui\profile\profile-test.spec.ts" time="7.22">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|ui-profile-profile-test-Pr-7e0c3-otos-when-user-likes-photos-chromium\test-failed-1.png]]
+
+[[ATTACHMENT|ui-profile-profile-test-Pr-7e0c3-otos-when-user-likes-photos-chromium\error-context.md]]
+]]>
+</system-out>
+<error message="locator.fill: value: expected string, got undefined" type="Error">
+<![CDATA[  [chromium] › ui\profile\profile-test.spec.ts:61:9 › Profile Test › @Profile Verify list of liked photos when user likes photos 
+
+    Error: locator.fill: value: expected string, got undefined
+
+       at ..\pages\login\login-page.ts:14
+
+      12 |
+      13 |     async enterEmailAndPassword(email: string, password: string) {
+    > 14 |         await this.txtEmailLoc.fill(email)
+         |                                ^
+      15 |         await this.txtPasswordLoc.fill(password)
+      16 |     }
+      17 |
+        at LoginPage.enterEmailAndPassword (C:\Users\HienHoangThao\Downloads\Assignment\CI-CD\CI-CD\Playwright\HoangThaoHien-Final-Playwright\src\pages\login\login-page.ts:14:32)
+        at Object.loginFixture (C:\Users\HienHoangThao\Downloads\Assignment\CI-CD\CI-CD\Playwright\HoangThaoHien-Final-Playwright\src\core\fixtures\fixture.ts:17:29)
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\..\test-results\ui-profile-profile-test-Pr-7e0c3-otos-when-user-likes-photos-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\..\test-results\ui-profile-profile-test-Pr-7e0c3-otos-when-user-likes-photos-chromium\error-context.md
+]]>
+</error>
+</testcase>
+</testsuite>
+<testsuite name="ui\profile\profile-test.spec.ts" timestamp="2026-05-25T10:42:06.376Z" hostname="firefox" tests="3" failures="0" skipped="0" time="34.926" errors="3">
+<testcase name="Profile Test › @Profile Verify when user follow a photographer" classname="ui\profile\profile-test.spec.ts" time="13.882">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|ui-profile-profile-test-Pr-7a8bc--user-follow-a-photographer-firefox\error-context.md]]
+]]>
+</system-out>
+<error message="locator.fill: value: expected string, got undefined" type="Error">
+<![CDATA[  [firefox] › ui\profile\profile-test.spec.ts:17:9 › Profile Test › @Profile Verify when user follow a photographer 
+
+    Error: locator.fill: value: expected string, got undefined
+
+       at ..\pages\login\login-page.ts:14
+
+      12 |
+      13 |     async enterEmailAndPassword(email: string, password: string) {
+    > 14 |         await this.txtEmailLoc.fill(email)
+         |                                ^
+      15 |         await this.txtPasswordLoc.fill(password)
+      16 |     }
+      17 |
+        at LoginPage.enterEmailAndPassword (C:\Users\HienHoangThao\Downloads\Assignment\CI-CD\CI-CD\Playwright\HoangThaoHien-Final-Playwright\src\pages\login\login-page.ts:14:32)
+        at Object.loginFixture (C:\Users\HienHoangThao\Downloads\Assignment\CI-CD\CI-CD\Playwright\HoangThaoHien-Final-Playwright\src\core\fixtures\fixture.ts:17:29)
+
+    Error Context: ..\..\test-results\ui-profile-profile-test-Pr-7a8bc--user-follow-a-photographer-firefox\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="Profile Test › @Profile Verify when updating the user information in the Profile page" classname="ui\profile\profile-test.spec.ts" time="14.857">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|ui-profile-profile-test-Pr-52027-rmation-in-the-Profile-page-firefox\test-failed-1.png]]
+
+[[ATTACHMENT|ui-profile-profile-test-Pr-52027-rmation-in-the-Profile-page-firefox\error-context.md]]
+]]>
+</system-out>
+<error message="locator.fill: value: expected string, got undefined" type="Error">
+<![CDATA[  [firefox] › ui\profile\profile-test.spec.ts:31:9 › Profile Test › @Profile Verify when updating the user information in the Profile page 
+
+    Error: locator.fill: value: expected string, got undefined
+
+       at ..\pages\login\login-page.ts:14
+
+      12 |
+      13 |     async enterEmailAndPassword(email: string, password: string) {
+    > 14 |         await this.txtEmailLoc.fill(email)
+         |                                ^
+      15 |         await this.txtPasswordLoc.fill(password)
+      16 |     }
+      17 |
+        at LoginPage.enterEmailAndPassword (C:\Users\HienHoangThao\Downloads\Assignment\CI-CD\CI-CD\Playwright\HoangThaoHien-Final-Playwright\src\pages\login\login-page.ts:14:32)
+        at Object.loginFixture (C:\Users\HienHoangThao\Downloads\Assignment\CI-CD\CI-CD\Playwright\HoangThaoHien-Final-Playwright\src\core\fixtures\fixture.ts:17:29)
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\..\test-results\ui-profile-profile-test-Pr-52027-rmation-in-the-Profile-page-firefox\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\..\test-results\ui-profile-profile-test-Pr-52027-rmation-in-the-Profile-page-firefox\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="Profile Test › @Profile Verify list of liked photos when user likes photos" classname="ui\profile\profile-test.spec.ts" time="6.187">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|ui-profile-profile-test-Pr-7e0c3-otos-when-user-likes-photos-firefox\test-failed-1.png]]
+
+[[ATTACHMENT|ui-profile-profile-test-Pr-7e0c3-otos-when-user-likes-photos-firefox\error-context.md]]
+]]>
+</system-out>
+<error message="locator.fill: value: expected string, got undefined" type="Error">
+<![CDATA[  [firefox] › ui\profile\profile-test.spec.ts:61:9 › Profile Test › @Profile Verify list of liked photos when user likes photos 
+
+    Error: locator.fill: value: expected string, got undefined
+
+       at ..\pages\login\login-page.ts:14
+
+      12 |
+      13 |     async enterEmailAndPassword(email: string, password: string) {
+    > 14 |         await this.txtEmailLoc.fill(email)
+         |                                ^
+      15 |         await this.txtPasswordLoc.fill(password)
+      16 |     }
+      17 |
+        at LoginPage.enterEmailAndPassword (C:\Users\HienHoangThao\Downloads\Assignment\CI-CD\CI-CD\Playwright\HoangThaoHien-Final-Playwright\src\pages\login\login-page.ts:14:32)
+        at Object.loginFixture (C:\Users\HienHoangThao\Downloads\Assignment\CI-CD\CI-CD\Playwright\HoangThaoHien-Final-Playwright\src\core\fixtures\fixture.ts:17:29)
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\..\test-results\ui-profile-profile-test-Pr-7e0c3-otos-when-user-likes-photos-firefox\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\..\test-results\ui-profile-profile-test-Pr-7e0c3-otos-when-user-likes-photos-firefox\error-context.md
+]]>
+</error>
+</testcase>
+</testsuite>
+<testsuite name="ui\profile\profile-test.spec.ts" timestamp="2026-05-25T10:42:06.376Z" hostname="webkit" tests="3" failures="0" skipped="0" time="20.736" errors="3">
+<testcase name="Profile Test › @Profile Verify when user follow a photographer" classname="ui\profile\profile-test.spec.ts" time="8.764">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|ui-profile-profile-test-Pr-7a8bc--user-follow-a-photographer-webkit\test-failed-1.png]]
+
+[[ATTACHMENT|ui-profile-profile-test-Pr-7a8bc--user-follow-a-photographer-webkit\error-context.md]]
+]]>
+</system-out>
+<error message="locator.fill: value: expected string, got undefined" type="Error">
+<![CDATA[  [webkit] › ui\profile\profile-test.spec.ts:17:9 › Profile Test › @Profile Verify when user follow a photographer 
+
+    Error: locator.fill: value: expected string, got undefined
+
+       at ..\pages\login\login-page.ts:14
+
+      12 |
+      13 |     async enterEmailAndPassword(email: string, password: string) {
+    > 14 |         await this.txtEmailLoc.fill(email)
+         |                                ^
+      15 |         await this.txtPasswordLoc.fill(password)
+      16 |     }
+      17 |
+        at LoginPage.enterEmailAndPassword (C:\Users\HienHoangThao\Downloads\Assignment\CI-CD\CI-CD\Playwright\HoangThaoHien-Final-Playwright\src\pages\login\login-page.ts:14:32)
+        at Object.loginFixture (C:\Users\HienHoangThao\Downloads\Assignment\CI-CD\CI-CD\Playwright\HoangThaoHien-Final-Playwright\src\core\fixtures\fixture.ts:17:29)
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\..\test-results\ui-profile-profile-test-Pr-7a8bc--user-follow-a-photographer-webkit\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\..\test-results\ui-profile-profile-test-Pr-7a8bc--user-follow-a-photographer-webkit\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="Profile Test › @Profile Verify when updating the user information in the Profile page" classname="ui\profile\profile-test.spec.ts" time="4.872">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|ui-profile-profile-test-Pr-52027-rmation-in-the-Profile-page-webkit\test-failed-1.png]]
+
+[[ATTACHMENT|ui-profile-profile-test-Pr-52027-rmation-in-the-Profile-page-webkit\error-context.md]]
+]]>
+</system-out>
+<error message="locator.fill: value: expected string, got undefined" type="Error">
+<![CDATA[  [webkit] › ui\profile\profile-test.spec.ts:31:9 › Profile Test › @Profile Verify when updating the user information in the Profile page 
+
+    Error: locator.fill: value: expected string, got undefined
+
+       at ..\pages\login\login-page.ts:14
+
+      12 |
+      13 |     async enterEmailAndPassword(email: string, password: string) {
+    > 14 |         await this.txtEmailLoc.fill(email)
+         |                                ^
+      15 |         await this.txtPasswordLoc.fill(password)
+      16 |     }
+      17 |
+        at LoginPage.enterEmailAndPassword (C:\Users\HienHoangThao\Downloads\Assignment\CI-CD\CI-CD\Playwright\HoangThaoHien-Final-Playwright\src\pages\login\login-page.ts:14:32)
+        at Object.loginFixture (C:\Users\HienHoangThao\Downloads\Assignment\CI-CD\CI-CD\Playwright\HoangThaoHien-Final-Playwright\src\core\fixtures\fixture.ts:17:29)
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\..\test-results\ui-profile-profile-test-Pr-52027-rmation-in-the-Profile-page-webkit\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\..\test-results\ui-profile-profile-test-Pr-52027-rmation-in-the-Profile-page-webkit\error-context.md
+]]>
+</error>
+</testcase>
+<testcase name="Profile Test › @Profile Verify list of liked photos when user likes photos" classname="ui\profile\profile-test.spec.ts" time="7.1">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|ui-profile-profile-test-Pr-7e0c3-otos-when-user-likes-photos-webkit\test-failed-1.png]]
+
+[[ATTACHMENT|ui-profile-profile-test-Pr-7e0c3-otos-when-user-likes-photos-webkit\error-context.md]]
+]]>
+</system-out>
+<error message="locator.fill: value: expected string, got undefined" type="Error">
+<![CDATA[  [webkit] › ui\profile\profile-test.spec.ts:61:9 › Profile Test › @Profile Verify list of liked photos when user likes photos 
+
+    Error: locator.fill: value: expected string, got undefined
+
+       at ..\pages\login\login-page.ts:14
+
+      12 |
+      13 |     async enterEmailAndPassword(email: string, password: string) {
+    > 14 |         await this.txtEmailLoc.fill(email)
+         |                                ^
+      15 |         await this.txtPasswordLoc.fill(password)
+      16 |     }
+      17 |
+        at LoginPage.enterEmailAndPassword (C:\Users\HienHoangThao\Downloads\Assignment\CI-CD\CI-CD\Playwright\HoangThaoHien-Final-Playwright\src\pages\login\login-page.ts:14:32)
+        at Object.loginFixture (C:\Users\HienHoangThao\Downloads\Assignment\CI-CD\CI-CD\Playwright\HoangThaoHien-Final-Playwright\src\core\fixtures\fixture.ts:17:29)
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\..\test-results\ui-profile-profile-test-Pr-7e0c3-otos-when-user-likes-photos-webkit\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\..\test-results\ui-profile-profile-test-Pr-7e0c3-otos-when-user-likes-photos-webkit\error-context.md
+]]>
+</error>
 </testcase>
 </testsuite>
 </testsuites>
