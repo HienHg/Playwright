@@ -2,4 +2,3 @@ node_modules/
 playwright-report/
 .vscode/
 .env
-test-results/
