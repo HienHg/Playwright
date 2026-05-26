@@ -26,14 +26,6 @@ steps:
 #   workingDirectory: $(PROJECT_PATH)
 #   displayName: Install Playwright browsers
 
-# #Create .env file
-# - script: |
-#     echo "USER_NAME=$(USER_NAME)" >> .env
-#     echo "PASSWORD=$(PASSWORD)" >> .env
-#     cat .env
-#   workingDirectory: $(PROJECT_PATH)
-#   displayName: "Create .env file"
-
 # # Run tests
 # - script: npx playwright test --reporter=junit
 #   workingDirectory: $(PROJECT_PATH)
@@ -57,6 +49,14 @@ steps:
 - script: npx playwright install --with-deps
   workingDirectory: $(PROJECT_PATH)
   displayName: "Install Playwright browsers"
+
+#Create .env file
+- script: |
+    echo "USER_NAME=$(USER_NAME)" >> .env
+    echo "PASSWORD=$(PASSWORD)" >> .env
+    cat .env
+  workingDirectory: $(PROJECT_PATH)
+  displayName: "Create .env file"
 
 # Run tests
 - script: npx playwright test --reporter=junit,html
