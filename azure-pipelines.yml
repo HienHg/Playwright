@@ -9,40 +9,73 @@ variables:
   value: 'HoangThaoHien-Final-Playwright'
 
 steps:
-# Cache npm
-- task: Cache@2
-  inputs:
-    key: 'npm | "$(Agent.OS)" | $(PROJECT_PATH)/package-lock.json'
-    path: ~/.npm
-  displayName: Cache npm
+# # Cache npm
+# - task: Cache@2
+#   inputs:
+#     key: 'npm | "$(Agent.OS)" | $(PROJECT_PATH)/package-lock.json'
+#     path: ~/.npm
+#   displayName: Cache npm
+
+# # Install dependencies
+# - script: npm install
+#   workingDirectory: $(PROJECT_PATH)
+#   displayName: Install dependencies
+
+# # Install Playwright browsers
+# - script: npx playwright install
+#   workingDirectory: $(PROJECT_PATH)
+#   displayName: Install Playwright browsers
+
+# #Create .env file
+# - script: |
+#     echo "USER_NAME=$(USER_NAME)" >> .env
+#     echo "PASSWORD=$(PASSWORD)" >> .env
+#     cat .env
+#   workingDirectory: $(PROJECT_PATH)
+#   displayName: "Create .env file"
+
+# # Run tests
+# - script: npx playwright test --reporter=junit
+#   workingDirectory: $(PROJECT_PATH)
+#   displayName: Run Playwright tests
+
+# # Publish test results
+# - task: PublishTestResults@2
+#   condition: succeededOrFailed()
+#   inputs:
+#     testResultsFormat: 'JUnit'
+#     testResultsFiles: '$(PROJECT_PATH)/test-results/*.xml'
+#   displayName: Publish test results
+
 
 # Install dependencies
-- script: npm install
+- script: npm ci
   workingDirectory: $(PROJECT_PATH)
-  displayName: Install dependencies
+  displayName: "Install dependencies"
 
 # Install Playwright browsers
-- script: npx playwright install
+- script: npx playwright install --with-deps
   workingDirectory: $(PROJECT_PATH)
-  displayName: Install Playwright browsers
-
-#Create .env file
-- script: |
-    echo "USER_NAME=$(USER_NAME)" >> .env
-    echo "PASSWORD=$(PASSWORD)" >> .env
-    cat .env
-  workingDirectory: $(PROJECT_PATH)
-  displayName: "Create .env file"
+  displayName: "Install Playwright browsers"
 
 # Run tests
-- script: npx playwright test --reporter=junit
+- script: npx playwright test --reporter=junit,html
   workingDirectory: $(PROJECT_PATH)
-  displayName: Run Playwright tests
+  displayName: "Run Playwright tests"
+  continueOnError: true
 
-# Publish test results
+# Publish test results (JUnit)
 - task: PublishTestResults@2
-  condition: succeededOrFailed()
   inputs:
     testResultsFormat: 'JUnit'
-    testResultsFiles: '$(PROJECT_PATH)/test-results/*.xml'
-  displayName: Publish test results
+    testResultsFiles: '$(PROJECT_PATH)/**/junit.xml'
+    failTaskOnFailedTests: true
+  displayName: "Publish test results"
+
+# Upload Playwright HTML report
+- task: PublishPipelineArtifact@1
+  inputs:
+    targetPath: '$(PROJECT_PATH)/playwright-report'
+    artifact: 'playwright-report'
+    publishLocation: 'pipeline'
+  displayName: "Upload Playwright report"
