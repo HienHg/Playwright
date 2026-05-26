@@ -23,16 +23,16 @@ steps:
 
 # Install Playwright browsers
 - script: npx playwright install
-  env:
-    USER_NAME: $(USER_NAME)
-    PASSWORD: $(PASSWORD)
   workingDirectory: $(PROJECT_PATH)
   displayName: Install Playwright browsers
 
-# Build (if exists)
-- script: npm run build --if-present
+#Create .env file
+- script: |
+    echo "USER_NAME=$(USER_NAME)" >> .env
+    echo "PASSWORD=$(PASSWORD)" >> .env
+    cat .env
   workingDirectory: $(PROJECT_PATH)
-  displayName: Build project
+  displayName: "Create .env file"
 
 # Run tests
 - script: npx playwright test --reporter=junit
